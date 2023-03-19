@@ -1,0 +1,11 @@
+h2.title {
+  margin: 40px 0;
+  font-size: 32px;
+}
+p{
+  font-size: 19px;
+  font-weight: 400;
+}
+p.text-1 {
+  margin-bottom: 40px;
+}

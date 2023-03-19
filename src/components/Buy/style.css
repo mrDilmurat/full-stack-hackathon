@@ -1,0 +1,20 @@
+h2.title {
+  margin-top: 50px;
+  font-size: 32px;
+}
+p{
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 30px;
+}
+span {
+  font-family: 700;
+}
+p.text-1 {
+  margin: 30px 0;
+}
+
+.line {
+  margin: 70px 0;
+
+}

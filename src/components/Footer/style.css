@@ -1,0 +1,50 @@
+.footer-bg {
+  background-color: #f4f4f4;
+  padding: 10px 0 20px 0;
+
+}
+
+h5.title {
+  text-align: center;
+  color: #858383;
+  text-align: center;
+  padding: 20px 0;
+}
+h5.footer-title {
+  margin-top: 20px;
+}
+
+.footer-items {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  
+}
+
+.blog-img {
+  margin: 20px 50px;
+  height: auto;
+}
+.items-links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  
+}
+a.links {
+  margin-bottom: 10px;
+  color: #595858;
+}
+a.links:hover {
+  
+}
+
+.footer-links {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+.footer-logo {
+  margin: 20px 0;
+}

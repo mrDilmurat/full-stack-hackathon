@@ -1,0 +1,34 @@
+.contacts {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+a.links {
+  list-style-type: none;
+  color: #303030;
+  text-decoration: none;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.links .drop-menu {
+  background-color: #cb3032;
+  color: azure;
+}
+
+.snav-links {
+  align-items: center;
+  gap: 25px;
+}
+form.input {
+  width:30%;
+}
+
+@media (max-width: 1200px) {
+  form.input {
+    width:70%;
+    margin: 20px 0;
+  }
+  .snav-links {
+    align-items:flex-start;
+  }
+}
