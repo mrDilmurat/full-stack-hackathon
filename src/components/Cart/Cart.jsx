@@ -22,14 +22,16 @@ const Cart = () => {
   return (
     <Container>
       <h1 className='cart-cor'>КОРЗИНА</h1><hr/>
-      {cartStorage.products?.map(item => (
+      {cartStorage.products.length ? cartStorage.products?.map(item => (
         <div key={item.id}>
           <h1 className='cart-name'>{item.name}</h1>
           <h4>Стоимость: {item.price} kg;</h4>
           <img className='cart-img' src={item.image} alt="" /><br /><br />
           <button className='cart-btn' onClick={() => deleteCart(item.id)}>delete</button>
         </div>
-      ))}
+      )):
+      <p className='cart-bil'>БИЛЕТОВ НЕТУ</p>
+      }
       <hr />
       <h4 className='cart-cor'>KОЛ: {cartStorage.ticketsCount}</h4> <hr />
       <h4 className='cart-cor'>ОБШАЯ СУМА: {cartStorage.totalPrice}</h4> <hr />
