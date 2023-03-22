@@ -6,11 +6,20 @@ import "./style.css";
 import { GoCalendar } from "react-icons/go";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsFillCCircleFill } from "react-icons/bs";
+
+import Container from '../Container/Container';
+
+
+
 import Container from "../Container/Container";
+
 
 import { useState, useEffect } from "react";
 
 const Products = () => {
+
+
+
   const [searchParams, setSearchParams] = useSearchParams();
 
   const postQuery = searchParams.get("product") || "";
@@ -21,13 +30,23 @@ const Products = () => {
 
     const query = form.search.value;
 
+
+    setSearchParams({ product: query })
+  }
+
     setSearchParams({ product: query });
   };
+
 
   return (
     <>
       <Container>
         <h4 className="title">ВСЕ МЕРОПРИЯТИЯ</h4>
+
+
+        <form className='search-form' autoComplete='off' onSubmit={handleSubmit}>
+          <input className='search-products' type='search' name='search' placeholder='Search' />
+          <input className='btn-send' type='submit' name='Search' />
 
         <form
           className="search-form"
@@ -41,6 +60,7 @@ const Products = () => {
             placeholder="Search"
           />
           <input className="btn-send" type="submit" name="Search" />
+
         </form>
         <Row>
           <Col xs={12}>
@@ -62,6 +82,22 @@ const Products = () => {
                         src={`${product.image}`}
                         alt="image"
                       />
+
+
+                    <Link className='products-link' to={`/products/${product.id}`}>КУПИТЬ БИЛЕТ</Link>
+                    {/* <button className='product-dob'>ДОБАВИТ В КОРЗИНУ</button> */}
+
+                    <h6 className='products-title'>{product.name}</h6>
+                    <Card.Body className=''>
+                      <p className='products-text'><GoCalendar className="icons-react" />{`${product.text}`}</p>
+                      <p className='products-text'><BsFillCCircleFill className="icons-react" />Стоимость: {`${product.price}`} сом</p>
+                      <p className='products-text'><FaMapMarkerAlt className="icons-react" />{`${product.location}`}</p>
+
+                    </Card.Body>
+                    <Card.Img className='red-ok' src="/img/red-ok.png" alt="" />
+                  </Card>
+                )
+              })}
 
                       <Link
                         className="products-link"
@@ -93,6 +129,7 @@ const Products = () => {
                     </Card>
                   );
                 })}
+
             </div>
           </Col>
         </Row>

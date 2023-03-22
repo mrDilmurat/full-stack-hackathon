@@ -52,6 +52,15 @@ a.product-link:hover {
   display: flex;
   gap: 15px;
 }
+.product-op{
+  color: #303030;
+  text-decoration: none;
+  padding: 5px 20px;
+  background-color: #19cd22;
+  color: white;
+  border-radius: 5px;
+  line-height: 28px;
+}
 /* @media (max-width: 992px) {
   .product {
     gap: 40px;

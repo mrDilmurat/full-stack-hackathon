@@ -63,6 +63,17 @@ input.btn-send {
   color: white;
   border-radius: 5px;
 }
+/* .product-dob{
+  text-decoration: none;
+  padding: 5px 20px;
+  color: white;
+  background-color: rgb(130, 134, 134);
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  margin: 10px;
+} */
 
 @media (max-width: 420px) {
   .search-form {
@@ -71,6 +82,7 @@ input.btn-send {
     
   }
 }
+
 /* 
 @media (max-width: 998px) {
   .product-img {

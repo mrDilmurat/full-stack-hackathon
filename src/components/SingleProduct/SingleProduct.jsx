@@ -14,6 +14,22 @@ const SingleProduct = () => {
   const { productId } = useParams();
   const product = products.find((product) => product.id === productId);
   const { image, name, text, price, location, desc, proDesc } = product;
+
+  const toCart = () => {
+    if(!JSON.parse(localStorage.getItem("cart"))){
+      localStorage.setItem("cart", JSON.stringify({
+        products: [],
+        ticketsCount: 0,
+        totalPrice: 0
+      }))
+    }
+  const cartList = JSON.parse(localStorage.getItem("cart"))
+  cartList.products.push(product)
+  cartList.ticketsCount++
+  cartList.totalPrice+=product.price
+  localStorage.setItem("cart", JSON.stringify(cartList))
+  }
+
   return (
     <Container>
       <Col>
@@ -30,6 +46,7 @@ const SingleProduct = () => {
                 <Button variant="danger">КУПИТЬ БИЛЕТ</Button>
 
                 <Link className='product-link' to='/products'>BACK</Link>
+                <Link className='product-op' to='/cart' onClick={toCart}>ПЕРЕЙТИ К ОПЛАТЕ</Link>
               </div>
               <div className='social-links'>
                 <h4><FiShare /> &nbsp;Поделиться</h4>
