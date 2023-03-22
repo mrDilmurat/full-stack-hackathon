@@ -1,17 +1,19 @@
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import { Link, useSearchParams } from "react-router-dom";
-import products from "../data";
+// import product from "";
 import "./style.css";
 import { GoCalendar } from "react-icons/go";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsFillCCircleFill } from "react-icons/bs";
 import Container from "../Container/Container";
+import { productsContext } from "../../context/productsContext";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
 const Products = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const { getProducts, products } = useContext(productsContext);
 
   const postQuery = searchParams.get("product") || "";
 
@@ -23,6 +25,10 @@ const Products = () => {
 
     setSearchParams({ product: query });
   };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
 
   return (
     <>
@@ -46,9 +52,9 @@ const Products = () => {
           <Col xs={12}>
             <div className="products d-flex flex-wrap">
               {products
-                .filter((product) =>
-                  product.name.toLowerCase().includes(postQuery)
-                )
+                // .filter((product) =>
+                //   product.name.toLowerCase().includes(postQuery)
+                // )
                 .map((product) => {
                   return (
                     <Card
