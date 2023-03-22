@@ -1,5 +1,5 @@
 import Layout from "./components/Layout/Layout";
-import { Routes, Route, } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Buy from "./components/Buy/Buy";
 import Contact from "./components/Contact/Contact";
 import Cart from "./components/Cart/Cart";
@@ -23,49 +23,44 @@ import Footer from "./components/Footer/Footer";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Offer from "./components/Offer/Offer";
 import TicketRefund from "./components/TicketRefund/TicketRefund";
+import AuthContextProvider from "./context/authContext";
+
 // import SearchForm from "./components/SearchForm/SearchForm";
 
-
 function App() {
-
   return (
     <>
-      <Routes>
-        <Route path='products' element={<Layout />}>
-          <Route index element={<Products />} />
-          <Route path=':productId' element={<SingleProduct />} />
-        </Route>
-        <Route path="/" element={<Layout />}>
-          <Route path="/buy" element={<Buy />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/cash-register" element={<CashRegister />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/alllinks" element={<AllLinks />} />
-          <Route path="/concert" element={<Concert />} />
-          <Route path="/spectacle" element={<Spectacle />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/seminar" element={<Seminar />} />
-          <Route path="/children" element={<Children />} />
-          <Route path="/tourism" element={<Tourism />} />
-          <Route path="/exhibition" element={<Exhibition />} />
-          <Route path="/sport" element={<Sport />} />
-          <Route path="/various" element={<Various />} />
-          <Route path="/" element={<Footer />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/offer" element={<Offer />} />
-          <Route path="/ticket-refund" element={<TicketRefund />} />
-          
-          
-        </Route>
-
-
-
-
-
-      </Routes>
+      <AuthContextProvider>
+        <Routes>
+          <Route path="products" element={<Layout />}>
+            <Route index element={<Products />} />
+            <Route path=":productId" element={<SingleProduct />} />
+          </Route>
+          <Route path="/" element={<Layout />}>
+            <Route path="/buy" element={<Buy />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/cash-register" element={<CashRegister />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/alllinks" element={<AllLinks />} />
+            <Route path="/concert" element={<Concert />} />
+            <Route path="/spectacle" element={<Spectacle />} />
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/seminar" element={<Seminar />} />
+            <Route path="/children" element={<Children />} />
+            <Route path="/tourism" element={<Tourism />} />
+            <Route path="/exhibition" element={<Exhibition />} />
+            <Route path="/sport" element={<Sport />} />
+            <Route path="/various" element={<Various />} />
+            <Route path="/" element={<Footer />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/offer" element={<Offer />} />
+            <Route path="/ticket-refund" element={<TicketRefund />} />
+          </Route>
+        </Routes>
+      </AuthContextProvider>
     </>
   );
 }
