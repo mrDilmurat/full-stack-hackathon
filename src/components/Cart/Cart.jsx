@@ -21,7 +21,7 @@ const Cart = () => {
 
   return (
     <Container>
-      <h1 className='cart-cor'>КОРЗИНА</h1><hr/>
+      <h1 className='cart-cort'>КОРЗИНА</h1><hr/>
       {cartStorage.products.length ? cartStorage.products?.map(item => (
         <div key={item.id}>
           <h1 className='cart-name'>{item.name}</h1>
