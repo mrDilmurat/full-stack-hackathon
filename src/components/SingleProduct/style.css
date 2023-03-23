@@ -61,6 +61,9 @@ a.product-link:hover {
   border-radius: 5px;
   line-height: 28px;
 }
+.product-op:hover {
+  color: #121812;
+}
 /* @media (max-width: 992px) {
   .product {
     gap: 40px;

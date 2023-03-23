@@ -43,7 +43,6 @@ const SingleProduct = () => {
               <p><FaMapMarkerAlt className="icons-react" />{location}</p>
 
               <div className='d-flex product-button'>
-                <Button variant="danger">КУПИТЬ БИЛЕТ</Button>
 
                 <Link className='product-link' to='/products'>BACK</Link>
                 <Link className='product-op' to='/cart' onClick={toCart}>ПЕРЕЙТИ К ОПЛАТЕ</Link>
