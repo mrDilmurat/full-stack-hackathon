@@ -1,0 +1,10 @@
+.auth-form {
+  display: flex;
+  max-width: 320px;
+
+  
+}
+.input-form {
+  
+  justify-content: center;
+}
