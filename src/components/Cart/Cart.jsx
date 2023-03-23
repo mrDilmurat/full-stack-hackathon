@@ -6,7 +6,7 @@ const Cart = () => {
 
   const cartStorage = JSON.parse(localStorage.getItem("cart"))
 
-  console.log(cartStorage);
+
 
   //custom
   const deleteCart = (id) => {

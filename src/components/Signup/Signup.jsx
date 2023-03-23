@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 // import { Link } from "react-router-dom";
-// import Container from "../Container/Container";
+import Container from "../Container/Container";
 // import CustomInput from "../CustomInput/CustomInput";
 import { useNavigate } from "react-router-dom";
 import { authContext } from "../../context/authContext";
@@ -62,7 +62,7 @@ function Signup() {
 
   useEffect(() => {
     setError(false);
-  }, []);
+  }, [setError]);
 
   function handleSave() {
     if (!email.trim() || !password.trim() || !password2.trim()) {
@@ -82,7 +82,8 @@ function Signup() {
   }
 
   return (
-    <Form>
+    <Container>
+      <Form>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control
@@ -123,6 +124,7 @@ function Signup() {
         Submit
       </Button>
     </Form>
+    </Container>
   );
 }
 
